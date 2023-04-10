@@ -1,0 +1,31 @@
+<div class="calculator">
+  <div class="result">
+    <input type="text" name="disp" id="disp" [(ngModel)]="result">
+  </div>
+  <div class="buttons">
+    <div class="row">
+      <input type="button" #v7 name="v7"  value="7" (click)="val(v7.value)">
+      <input type="button" #v8 name="v8"  value="8" (click)="val(v8.value)">
+      <input type="button" #v9 name="v9"  value="9" (click)="val(v9.value)">
+      <input type="button" #add name="add"  value="+" (click)="val(add.value)">
+    </div>
+    <div class="row">
+      <input type="button" #v4 name="v4"  value="4" (click)="val(v4.value)">
+      <input type="button" #v5 name="v5"  value="5" (click)="val(v5.value)">
+      <input type="button" #v6 name="v6"  value="6" (click)="val(v6.value)">
+      <input type="button" #sub name="sub"  value="-" (click)="val(sub.value)">
+    </div>
+    <div class="row">
+      <input type="button" #v1 name="v1"  value="1" (click)="val(v1.value)">
+      <input type="button" #v2 name="v2"  value="2" (click)="val(v2.value)">
+      <input type="button" #v3 name="v3"  value="3" (click)="val(v3.value)">
+      <input type="button" #mul name="mul"  value="*" (click)="val(mul.value)">
+    </div>
+    <div class="row">
+      <input type="button" #v0 name="v0"  value="0" (click)="val(v0.value)">
+      <input type="button" #vdot name="vdot"  value="." (click)="val(vdot.value)">
+      <input type="button" #vdiv name="vdiv"  value="/" (click)="val(vdiv.value)">
+      <input type="button" title="Nhấn 2 lần để xóa"  name="veql"  value="=" (click)="calculate(result)" (dblclick)="clearResult()">
+    </div>
+  </div>
+</div>
