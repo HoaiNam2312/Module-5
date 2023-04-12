@@ -1,0 +1,8 @@
+.footer {
+  height: 200px;
+  background-color: #046056;
+}
+.footer h2 {
+  text-align: center;
+  line-height: 200px;
+}
