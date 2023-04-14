@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-font-size-editor',
@@ -7,13 +7,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FontSizeEditorComponent implements OnInit {
   fontSize = 14;
-  public age = 44;
+  public age = 44.12323;
   public char = '44';
   public arr: string[] = ['A', 'B', 'C'];
-  constructor() { }
+  public date = new Date();
+
+  constructor() {
+  }
 
   ngOnInit(): void {
   }
+
   changeFontSizeValue(fontSize) {
     this.fontSize = fontSize;
   }
