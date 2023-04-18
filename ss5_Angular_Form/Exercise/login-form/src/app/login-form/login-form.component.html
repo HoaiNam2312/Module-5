@@ -1,0 +1,96 @@
+<div class="container">
+<form class="mt-5" novalidate [formGroup]="register" (ngSubmit)="onSubmit()">
+  <h1 class="text-center text-success">REGISER</h1>
+  <div class="input-group cha my-4 hop">
+    <label class="imp1" for="email">Email</label><br>
+    <div class="imp2">
+      <input type="email" class="form-control" name="email" id="email" aria-describedby="emailHelpId"
+             formControlName="email">
+      <p *ngIf="register.controls.email?.touched && register.controls.email?.errors?.required" class="text-danger">Bắt buộc
+        nhập</p>
+      <p *ngIf="register.controls.email?.touched && register.controls.email?.errors?.email" class="text-danger">Email phải
+        có dạng: "abc@gmail.com"</p>
+    </div>
+  </div>
+
+
+
+  <div class="input-group cha my-4">
+    <label class="imp1" for="password">Password</label><br>
+    <div class="imp2">
+      <input type="password" class="form-control" name="" id="password" formControlName="password">
+      <p *ngIf="register.controls?.password?.touched && register.controls?.password?.errors?.required" class="text-danger">
+        Bắt buộc nhập</p>
+      <p *ngIf="register.controls?.password?.touched && register.controls?.password?.errors?.minlength" class="text-danger">
+        Mật khẩu phải có trên 6 ký tự</p>
+    </div>
+  </div>
+
+  <div class="input-group cha my-4">
+    <label class="imp1" for="cfPassword">Password confirm</label><br>
+    <div class="imp2">
+      <input type="password" class="form-control" name="cfPassword" id="cfPassword" formControlName="cfPassword">
+      <p *ngIf="register.controls.cfPassword?.touched && register.controls.cfPassword?.errors?.required"
+         class="text-danger">Bắt buộc nhập</p>
+      <p *ngIf="register.controls.cfPassword?.touched && register.errors?.passwordError" class="text-danger">Mật khẩu không
+        khớp nhau</p>
+    </div>
+  </div>
+
+
+  <div class="input-group cha my-4">
+    <label class="imp1" for="country">Country:</label>
+    <div class="imp2">
+      <select class="form-select" name="country" id="country" formControlName="country">
+        <option *ngFor="let country of countryList" [value]="country">{{country}}</option>
+      </select>
+      <p *ngIf="register.controls.country?.touched && register.controls.country?.errors?.required" class="text-danger">Bắt
+        buộc chọn 1 thành phố</p>
+    </div>
+  </div>
+
+
+
+  <div class="input-group cha my-4">
+    <label class="imp1" for="age">Age:</label>
+    <div class="imp2">
+      <input type="password" class="form-control imp2" name="" id="age" formControlName="age">
+      <p *ngIf="register.controls.age?.touched && register.controls.age?.errors?.required" class="text-danger">Bắt buộc
+        nhập</p>
+      <p *ngIf="register.controls.age?.touched && register.controls.age?.errors?.underage" class="text-danger">Rất tiếc bạn
+        chưa đủ 18 tuổi</p>
+    </div>
+  </div>
+
+
+  <div class="input-group cha my-4">
+    <label class="imp1" for="age">Gender:</label>
+    <div class="imp2">
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="gender" id="inlineRadio1"  value="true" formControlName="gender">
+        <label class="form-check-label" for="inlineRadio1">Nam</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="gender" id="inlineRadio2" value="false" formControlName="gender">
+        <label class="form-check-label" for="inlineRadio2">Nữ</label>
+      </div>
+      <p *ngIf="register.controls.gender?.untouched && register.controls.gender?.errors?.required" class="text-danger">Bắt buộc
+        nhập</p>
+    </div>
+  </div>
+
+
+  <div class="input-group cha my-4">
+    <label class="imp1" for="phone">Phone:</label>
+   <div class="imp2">
+     <input type="password" class="form-control " name="" id="phone" formControlName="phone">
+     <p *ngIf="register.controls.phone?.touched && register.controls.phone?.errors?.required" class="text-danger ">Bắt buộc
+       nhập</p>
+     <p *ngIf="register.controls.phone?.touched && register.controls.phone?.errors?.pattern" class="text-danger ">SĐT phải bắt đầu với +84, và theo sau là 9 đến 10 chữ số</p>
+     <button class="btn btn-success mt-5" type="submit" [disabled]="!register.valid">Submit</button>
+   </div>
+  </div>
+
+</form>
+
+</div>
