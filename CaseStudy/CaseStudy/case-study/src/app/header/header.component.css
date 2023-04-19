@@ -1,0 +1,30 @@
+/*:root {*/
+/*  --color-default: #212529;*/
+/*  --color-primary: #ce1212;*/
+/*  --color-secondary: #37373f;*/
+/*}*/
+
+/*.header {*/
+/*  background: #fff;*/
+/*  transition: all 0.5s;*/
+/*  z-index: 997;*/
+/*  height: 90px;*/
+/*  border-bottom: 1px solid #fff;*/
+/*}*/
+
+/*.header .logo img {*/
+/*  max-height: 80px;*/
+/*  margin-right: 6px;*/
+/*}*/
+
+/*.navbar ul {*/
+/*  margin: 0;*/
+/*  padding: 0;*/
+/*  display: flex;*/
+/*  list-style: none;*/
+/*  align-items: center;*/
+/*}*/
+
+.navbar {
+  height: 70px;
+}
