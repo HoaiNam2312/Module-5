@@ -1,0 +1,46 @@
+<section>
+  <div class="container">
+    <h1 class="text-center mt-3">Xóa sản phẩm</h1>
+    <form [formGroup]="productForm" (ngSubmit)="submit()">
+      <div class="mb-3">
+        <label for="id" class="form-label">Mã sản phẩm:</label>
+        <input type="email" class="form-control" id="id" aria-describedby="emailHelp" formControlName="id" disabled>
+        <div class="form-text text-danger"
+             *ngIf="productForm.controls.id?.touched && productForm.controls.id?.errors?.required">*Bắt buộc nhập
+        </div>
+        <div class="form-text text-danger"
+             *ngIf="productForm.controls.id?.touched && productForm.controls.id?.errors?.pattern">*Chỉ nhập ký tự số.
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="name" class="form-label">Tên sản phẩm:</label>
+        <input type="email" class="form-control" id="name" aria-describedby="emailHelp" formControlName="name" disabled>
+        <div class="form-text text-danger"
+             *ngIf="productForm.controls.name?.touched && productForm.controls.name?.errors?.required">*Bắt buộc nhập
+        </div>
+        <div class="form-text text-danger"
+             *ngIf="productForm.controls.name?.touched && productForm.controls.name?.errors?.minlength">*Tên sản phẩm phải có tối thiểu 6 ký tự.
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="price" class="form-label">Giá sản phẩm:</label>
+        <input type="email" class="form-control" id="price" aria-describedby="emailHelp" formControlName="price" disabled>
+        <div class="form-text text-danger"
+             *ngIf="productForm.controls.price?.touched && productForm.controls.price?.errors?.required">*Bắt buộc nhập
+        </div>
+        <div class="form-text text-danger"
+             *ngIf="productForm.controls.price?.touched && productForm.controls.price?.errors?.min">*Giá sản phẩm phải lớn hơn hoặc bằng 100.
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="description" class="form-label">Mô tả về sản phẩm:</label>
+        <input type="email" class="form-control" id="description" aria-describedby="emailHelp"
+               formControlName="description" disabled>
+        <div class="form-text text-danger"
+             *ngIf="productForm.controls.description?.touched && productForm.controls.description?.errors?.required">*Bắt buộc nhập
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary">Xóa</button>
+    </form>
+  </div>
+</section>

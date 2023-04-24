@@ -1,0 +1,13 @@
+<h1>Translate Application</h1>
+<table>
+  <tr>
+    <td>NO</td>
+    <td>Word</td>
+    <td>Mean</td>
+  </tr>
+  <tr *ngFor="let word of wordList; index as i">
+    <td>{{i + 1}}</td>
+    <td>{{word.word}}</td>
+    <td><a href="#" routerLink="/detail/{{word.id}}">Click</a></td>
+  </tr>
+</table>
