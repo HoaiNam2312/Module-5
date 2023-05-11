@@ -1,0 +1,101 @@
+<section class="h-100 h-custom my-2 bg-transparent">
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-lg-8 col-xl-6">
+        <div class="card rounded-3">
+          <img src="https://www.pixelstalk.net/wp-content/uploads/2016/06/HD-Manchester-United-High-Def-Pictures.jpg"
+               class="w-100" style="border-top-left-radius: .3rem; border-top-right-radius: .3rem;"
+               alt="Sample photo">
+          <div class="card-body p-4 p-md-5">
+            <h3 class="mb-4 pb-2 pb-md-0 mb-md-5 px-md-2">Registration Info</h3>
+
+            <form class="px-md-2" [formGroup]="creatForm" (ngSubmit)="submit()">
+
+              <div class="form-outline mb-4" hidden>
+                <input type="text" id="id" class="form-control" formControlName="id"/>
+                <label class="form-label" for="id">ID</label>
+              </div>
+
+              <div class="form-outline mb-4">
+                <input type="text" id="name" class="form-control" formControlName="name"/>
+                <p *ngIf="creatForm.controls.name?.touched && creatForm.controls.name?.errors?.required"
+                   class="text-danger">Bắt buộc
+                  nhập</p>
+                <label class="form-label" for="name">Tên sản phẩm</label>
+              </div>
+
+
+<!--              <div class=" mb-4">-->
+<!--                <label class="form-label me-3">Giới tính:</label>-->
+<!--                &lt;!&ndash;                <select class="select" id="gender" formControlName="gender">&ndash;&gt;-->
+<!--                &lt;!&ndash;                  <option value="false">Nữ</option>&ndash;&gt;-->
+<!--                &lt;!&ndash;                  <option value="true">Nam</option>&ndash;&gt;-->
+<!--                &lt;!&ndash;                </select>&ndash;&gt;-->
+<!--                <div class="form-check form-check-inline">-->
+<!--                  <input class="form-check-input" type="radio" id="inlineRadio1" value="false" formControlName="gender">-->
+<!--                  <label class="form-check-label" for="inlineRadio1">Nữ</label>-->
+<!--                </div>-->
+<!--                <div class="form-check form-check-inline">-->
+<!--                  <input class="form-check-input" type="radio" id="inlineRadio2" value="true" formControlName="gender">-->
+<!--                  <label class="form-check-label" for="inlineRadio2">Nam</label>-->
+<!--                </div>-->
+<!--                <p *ngIf="creatForm.controls.gender?.pristine && creatForm.controls.gender?.errors?.required"-->
+<!--                   class="text-danger">Bắt buộc-->
+<!--                  chọn</p>-->
+<!--              </div>-->
+
+
+              <div class="form-outline mb-4">
+                <input type="number" id="price" class="form-control" formControlName="price"/>
+                <p *ngIf="creatForm.controls.price?.touched && creatForm.controls.price?.errors?.required"
+                   class="text-danger">Bắt buộc
+                  nhập</p>
+                <p *ngIf="creatForm.controls.price?.touched && creatForm.controls.price?.errors?.min"
+                   class="text-danger">Giá bán phải lơn hơn 100.000 VNĐ</p>
+<!--                <p *ngIf="creatForm.controls.idCard?.touched && creatForm.controls.idCard?.errors?.pattern"-->
+<!--                   class="text-danger">CMND phải là 9 chữ số</p>-->
+                <label class="form-label" for="price">Giá bán</label>
+              </div>
+
+              <div class="form-outline mb-4">
+                <input type="text" id="status" class="form-control" formControlName="status"/>
+                <p *ngIf="creatForm.controls.status?.touched && creatForm.controls.status?.errors?.required"
+                   class="text-danger">Bắt buộc
+                  nhập</p>
+<!--                <p *ngIf="creatForm.controls.idCard?.touched && creatForm.controls.idCard?.errors?.pattern"-->
+<!--                   class="text-danger">CMND phải là 9 chữ số</p>-->
+                <label class="form-label" for="status">Trạng thái</label>
+              </div>
+
+<!--              <div class="form-outline mb-4">-->
+<!--                <input type="number" id="phone" class="form-control" formControlName="phone"/>-->
+<!--                <p *ngIf="creatForm.controls.phone?.touched && creatForm.controls.phone?.errors?.required"-->
+<!--                   class="text-danger">Bắt buộc-->
+<!--                  nhập</p>-->
+<!--                <p *ngIf="creatForm.controls.phone?.touched && creatForm.controls.phone?.errors?.pattern"-->
+<!--                   class="text-danger">Số điện thoại này chưa chính xác. Vui lòng nhập lại!</p>-->
+<!--                <label class="form-label" for="phone">SĐT</label>-->
+<!--              </div>-->
+
+
+              <div class=" mb-4">
+                <label for="custommerType" class="form-label me-3">Loại sản phẩm</label>
+                <select class="select" id="custommerType" formControlName="productType">
+                  <option value="">Chọn loại sản phẩm</option>
+                  <option *ngFor="let item of productTypeList" [ngValue]="item">{{item.name}}</option>
+                </select>
+                <p
+                  *ngIf="creatForm.controls.productType?.untouched || creatForm.controls.productType?.errors?.required"
+                  class="text-danger">Bắt buộc
+                  chọn</p>
+              </div>
+
+              <button type="submit" class="btn btn-success btn-lg mb-1" [disabled]="!creatForm.valid">Tạo mới</button>
+            </form>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

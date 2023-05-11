@@ -1,0 +1,144 @@
+{
+  "teachers": [
+    {
+      "name": "Hồ Tấn Huy hoàng",
+      "salary": "40",
+      "teacherType": {
+        "id": 1,
+        "name": "Hiệu trưởng"
+      },
+      "vote": 0,
+      "id": 1
+    },
+    {
+      "id": 2,
+      "name": "Nguyễn Thị Mai",
+      "salary": 5000000,
+      "vote": 4,
+      "teacherType": {
+        "id": 2,
+        "name": "Giáo viên"
+      }
+    },
+    {
+      "id": 3,
+      "name": "Trần Văn Tùng",
+      "salary": 4500000,
+      "vote": 3,
+      "teacherType": {
+        "id": 2,
+        "name": "Giáo viên"
+      }
+    },
+    {
+      "id": 4,
+      "name": "Lê Thị Thu",
+      "salary": 3500000,
+      "vote": 2,
+      "teacherType": {
+        "id": 2,
+        "name": "Giáo viên"
+      }
+    },
+    {
+      "id": 5,
+      "name": "Phạm Anh Tuấn",
+      "salary": 5500000,
+      "vote": 5,
+      "teacherType": {
+        "id": 2,
+        "name": "Giáo viên"
+      }
+    },
+    {
+      "id": 6,
+      "name": "Nguyễn Minh Tâm",
+      "salary": 3000000,
+      "vote": 4,
+      "teacherType": {
+        "id": 2,
+        "name": "Giáo viên"
+      }
+    },
+    {
+      "id": 7,
+      "name": "Trương Hoài An",
+      "salary": 4200000,
+      "vote": 5,
+      "teacherType": {
+        "id": 2,
+        "name": "Giáo viên"
+      }
+    },
+    {
+      "id": 8,
+      "name": "Bùi Thị Hồng",
+      "salary": 4800000,
+      "vote": 3,
+      "teacherType": {
+        "id": 2,
+        "name": "Giáo viên"
+      }
+    },
+    {
+      "id": 9,
+      "name": "Vũ Đức Anh",
+      "salary": 3800000,
+      "vote": 4,
+      "teacherType": {
+        "id": 2,
+        "name": "Giáo viên"
+      }
+    },
+    {
+      "id": 10,
+      "name": "Ngô Thị Minh",
+      "salary": 4300000,
+      "vote": 5,
+      "teacherType": {
+        "id": 2,
+        "name": "Giáo viên"
+      }
+    },
+    {
+      "name": "Nguyễn Văn A",
+      "salary": "9.6",
+      "vote": 0,
+      "id": 11,
+      "teacherType": {
+        "id": 2,
+        "name": "Giáo viên"
+      }
+    },
+    {
+      "name": "Hồ Tấn Huy xxx",
+      "salary": "4000",
+      "teacherType": {
+        "id": 1,
+        "name": "Hiệu trưởng"
+      },
+      "vote": 0,
+      "id": 12
+    },
+    {
+      "name": "Hồ Tấn Huy x",
+      "salary": "4000",
+      "teacherType": {
+        "id": 1,
+        "name": "Hiệu trưởng"
+      },
+      "vote": 0,
+      "id": 13
+    }
+  ],
+  "teacherTypes": [
+    {
+      "id": 1,
+      "name": "Hiệu trưởng"
+    },
+    {
+      "id": 2,
+      "name": "Giáo viên"
+    }
+  ]
+}

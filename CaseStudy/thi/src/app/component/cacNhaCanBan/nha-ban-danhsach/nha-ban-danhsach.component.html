@@ -1,0 +1,90 @@
+<div class="container bg-transparent mt-5">
+
+
+  <!--        Tìm kiếm-->
+    <div class="row">
+      <div class="col-3 mt-3"></div>
+      <div class="col-6 mt-3">
+        <form>
+          <div class="input-group mb-3">
+            <input #dienTich type="text" class="form-control" placeholder="Diện tích"
+                   aria-label="Recipient's username"
+                   aria-describedby="button-addon2" name="dienTich">
+
+            <input #gia type="text" class="form-control" placeholder="Giá"
+                   aria-label="Recipient's username"
+                   aria-describedby="button-addon2" name="gia">
+            <select #huong class="form-select" aria-label="Default select example">
+              <option value="" selected>Chọn Hướng nhà</option>
+              <option *ngFor="let item of danhSachHuong" value="{{item.id}}">{{item.name}}</option>
+            </select>
+            <button class="btn btn-outline-secondary" type="reset">Xóa tìm kiếm</button>
+            <button class="btn btn-outline-secondary" type="submit" id="button-addon2"
+                    (click)="search(dienTich.value,gia.value,huong.value)">Tìm kiếm
+            </button>
+          </div>
+        </form>
+      </div>
+      <div class="col-3 mt-3"></div>
+    </div>
+
+
+  <!--       Bảng danh sách-->
+  <div class="row mt-5">
+    <div class="col-lg-12">
+      <table id="tableStudent" class="table table-primary table-bordered table-hover table-responsive">
+        <thead>
+        <tr>
+          <th>
+            Tiêu đề
+          </th>
+          <th>
+            Loại bài viết
+          </th>
+          <th>Danh mục</th>
+          <th>Ngày đăng</th>
+          <th>Trạng Thái</th>
+          <th>Diện tích</th>
+          <th>Giá bán</th>
+          <th>Hướng nhà</th>
+          <th class="text-center">Xóa</th>
+          <th class="text-center">Sửa</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let nhaBan of danhSachNhaBan; index as i">
+          <td>{{nhaBan.tuaDe}}</td>
+          <td>{{nhaBan.banDangTin}}</td>
+          <td>{{nhaBan.danhMuc}}</td>
+          <td *ngIf="nhaBan.ngayDang">{{nhaBan.ngayDang | date: 'yyyy-MM-dd'}}</td>
+          <td *ngIf="!nhaBan.ngayDang">2023-10-05</td>
+          <td>{{nhaBan.tinhTrang}}</td>
+          <td>{{nhaBan.dienTich}}</td>
+          <td>{{nhaBan.gia | number}}</td>
+          <td>{{nhaBan.huong.name}}</td>
+          <!--Edit-->
+          <td>
+            <div class="d-flex justify-content-center">
+              <a class="btn btn-danger" role="button" href="#">
+                Xóa</a>
+            </div>
+          </td> <td>
+            <div class="d-flex justify-content-center">
+              <a class="btn btn-danger" role="button" href="#">
+                Sửa</a>
+            </div>
+          </td>
+        </tr>
+
+        <!--        Delete-->
+
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="row mb-5">
+    <div class="col-12 text-center">
+      <a href="#" class="btn btn-success" routerLink="/nhaBan/create">Đăng tin bán nhà</a>
+    </div>
+  </div>
+</div>

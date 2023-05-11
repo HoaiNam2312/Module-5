@@ -1,0 +1,42 @@
+<table class="table">
+  <thead>
+  <tr>
+    <th>Input</th>
+    <th>Pipe</th>
+    <th>Output</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td scope="row">{{name}}</td>
+    <td>uppercase</td>
+    <td>{{name | uppercase}}</td>
+  </tr>
+  <tr>
+    <td scope="row">{{name}}</td>
+    <td>lowercase</td>
+    <td>{{name | lowercase}}</td>
+  </tr>
+  <tr>
+    <td scope="row">{{name}}</td>
+    <td>titlecase</td>
+    <td>{{name | titlecase}}</td>
+  </tr>
+  <tr>
+    <td scope="row">{{name}}</td>
+    <td>slice</td>
+    <td>{{name | slice :0:6 | titlecase}}
+      {{name | slice :11 | titlecase}}</td>
+  </tr>
+  <tr>
+    <td scope="row">{{date}}</td>
+    <td>date</td>
+    <td>{{date | date: 'dd/MM/yyyy'}}</td>
+  </tr>
+  <tr>
+    <td scope="row">{{number}}</td>
+    <td>currency</td>
+    <td>{{number | currency: 'VND'}}</td>
+  </tr>
+  </tbody>
+</table>

@@ -1,0 +1,155 @@
+<!--<section class="my-5">-->
+<!--  <div class="container">-->
+<!--    <h1 class="text-center mt-3">Thêm mới sản phẩm</h1>-->
+<!--    <form [formGroup]="customerFormCreate" (ngSubmit)="submit()">-->
+<!--      <div class="mb-3" hidden>-->
+<!--        <label for="id" class="form-label">ID:</label>-->
+<!--        <input type="email" class="form-control" id="id" aria-describedby="emailHelp" formControlName="id">-->
+<!--      </div>-->
+<!--      <div class="mb-3">-->
+<!--        <label for="name" class="form-label">Họ và tên:</label>-->
+<!--        <input type="text" class="form-control" id="name" aria-describedby="emailHelp" formControlName="name">-->
+<!--&lt;!&ndash;        <div class="form-text text-danger"&ndash;&gt;-->
+<!--&lt;!&ndash;             *ngIf="customerFormCreate.controls.name?.touched && customerFormCreate.controls.name?.errors?.required">*Bắt buộc nhập&ndash;&gt;-->
+<!--&lt;!&ndash;        </div>&ndash;&gt;-->
+<!--&lt;!&ndash;        <div class="form-text text-danger"&ndash;&gt;-->
+<!--&lt;!&ndash;             *ngIf="customerFormCreate.controls.name?.touched && customerFormCreate.controls.name?.errors?.minlength">*Tên sản phẩm phải có tối thiểu 6 ký tự.&ndash;&gt;-->
+<!--&lt;!&ndash;        </div>&ndash;&gt;-->
+<!--      </div>-->
+<!--      <div class="mb-3">-->
+<!--        <label for="birthday" class="form-label">Ngày sinh:</label>-->
+<!--        <input type="text" class="form-control" id="birthday" aria-describedby="emailHelp" formControlName="birthday">-->
+<!--&lt;!&ndash;        <div class="form-text text-danger"&ndash;&gt;-->
+<!--&lt;!&ndash;             *ngIf="customerFormCreate.controls.price?.touched && customerFormCreate.controls.price?.errors?.required">*Bắt buộc nhập&ndash;&gt;-->
+<!--&lt;!&ndash;        </div>&ndash;&gt;-->
+<!--&lt;!&ndash;        <div class="form-text text-danger"&ndash;&gt;-->
+<!--&lt;!&ndash;             *ngIf="customerFormCreate.controls.price?.touched && customerFormCreate.controls.price?.errors?.min">*Giá sản phẩm phải lớn hơn hoặc bằng 100.&ndash;&gt;-->
+<!--&lt;!&ndash;        </div>&ndash;&gt;-->
+<!--      </div>-->
+<!--      <div class="mb-3">-->
+<!--        <div class="form-check form-check-inline">-->
+<!--          <input class="form-check-input" type="radio" name="birthday" formControlName="gender" id="inlineRadio1" value="true">-->
+<!--          <label class="form-check-label" for="inlineRadio1">Nam</label>-->
+<!--        </div>-->
+<!--        <div class="form-check form-check-inline">-->
+<!--          <input class="form-check-input" type="radio" name="birthday" formControlName="gender" id="inlineRadio2" value="false">-->
+<!--          <label class="form-check-label" for="inlineRadio2">Nữ</label>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--      <div class="mb-3">-->
+<!--        <label for="idCard" class="form-label">CMND:</label>-->
+<!--        <input type="number" class="form-control" id="idCard" aria-describedby="emailHelp" formControlName="idCard">-->
+<!--&lt;!&ndash;        <div class="form-text text-danger"&ndash;&gt;-->
+<!--&lt;!&ndash;             *ngIf="customerFormCreate.controls.description?.touched && customerFormCreate.controls.description?.errors?.required">*Bắt buộc nhập&ndash;&gt;-->
+<!--&lt;!&ndash;        </div>&ndash;&gt;-->
+<!--      </div>-->
+<!--      <button type="submit" class="btn btn-primary">Tạo mới</button>-->
+<!--    </form>-->
+<!--  </div>-->
+<!--</section>-->
+
+
+<section class="h-100 h-custom my-2" style="background-color: #8fc4b7;">
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-lg-8 col-xl-6">
+        <div class="card rounded-3">
+          <img src="https://cdn1.ivivu.com/iVivu/2022/03/03/18/53114-furama-resort-da-nang-11-800x450.jpg"
+               class="w-100" style="border-top-left-radius: .3rem; border-top-right-radius: .3rem;"
+               alt="Sample photo">
+          <div class="card-body p-4 p-md-5">
+            <h3 class="mb-4 pb-2 pb-md-0 mb-md-5 px-md-2">Registration Info</h3>
+
+            <form class="px-md-2" [formGroup]="customerFormCreate" (ngSubmit)="submit()">
+
+              <div class="form-outline mb-4" hidden>
+                <input type="text" id="id" class="form-control" formControlName="id"/>
+                <label class="form-label" for="id">ID</label>
+              </div>
+
+              <div class="form-outline mb-4">
+                <input type="text" id="name" class="form-control" formControlName="name"/>
+                <p *ngIf="customerFormCreate.controls.name?.touched && customerFormCreate.controls.name?.errors?.required" class="text-danger">Bắt buộc
+                nhập</p>
+                <label class="form-label" for="name">Họ và tên</label>
+              </div>
+
+              <div class="form-outline mb-4">
+                <input type="text" id="birthday" class="form-control" formControlName="birthday" />
+
+                <p *ngIf="customerFormCreate.controls.birthday?.touched && customerFormCreate.controls.birthday?.errors?.required" class="text-danger">Bắt buộc
+                  nhập</p>
+                <p *ngIf="customerFormCreate.controls.birthday?.touched && customerFormCreate.controls.birthday?.errors?.pattern" class="text-danger">Vui lòng nhập theo định dạng sau: 'yyyy-MM-dd'</p>
+                <label class="form-label" for="birthday">Ngày sinh</label>
+              </div>
+
+
+              <div class=" mb-4">
+                <label class="form-label me-3">Giới tính:</label>
+<!--                <select class="select" id="gender" formControlName="gender">-->
+<!--                  <option value="false">Nữ</option>-->
+<!--                  <option value="true">Nam</option>-->
+<!--                </select>-->
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio"  id="inlineRadio1" value="false" formControlName="gender">
+                  <label class="form-check-label" for="inlineRadio1">Nữ</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio"  id="inlineRadio2" value="true" formControlName="gender">
+                  <label class="form-check-label" for="inlineRadio2">Nam</label>
+                </div>
+                <p *ngIf="customerFormCreate.controls.gender?.pristine && customerFormCreate.controls.gender?.errors?.required" class="text-danger">Bắt buộc
+                  chọn</p>
+              </div>
+
+
+              <div class="form-outline mb-4">
+                <input type="number" id="idCard" class="form-control" formControlName="idCard" />
+                <p *ngIf="customerFormCreate.controls.idCard?.touched && customerFormCreate.controls.idCard?.errors?.required" class="text-danger">Bắt buộc
+                  nhập</p>
+                <p *ngIf="customerFormCreate.controls.idCard?.touched && customerFormCreate.controls.idCard?.errors?.pattern" class="text-danger">CMND phải là 9 chữ số</p>
+                <label class="form-label" for="idCard">CMND</label>
+              </div>
+
+              <div class="form-outline mb-4">
+                <input type="number" id="phone" class="form-control" formControlName="phone" />
+                <p *ngIf="customerFormCreate.controls.phone?.touched && customerFormCreate.controls.phone?.errors?.required" class="text-danger">Bắt buộc
+                  nhập</p>
+                <p *ngIf="customerFormCreate.controls.phone?.touched && customerFormCreate.controls.phone?.errors?.pattern" class="text-danger">Số điện thoại này chưa chính xác. Vui lòng nhập lại!</p>
+                <label class="form-label" for="phone">SĐT</label>
+              </div>
+
+              <div class="form-outline mb-4">
+                <input type="text" id="email" class="form-control" formControlName="email"/>
+                <p *ngIf="customerFormCreate.controls.email?.touched && customerFormCreate.controls.email?.errors?.required" class="text-danger">Bắt buộc
+                  nhập</p>
+                <p *ngIf="customerFormCreate.controls.email?.touched && customerFormCreate.controls.email?.errors?.email" class="text-danger">Email này chưa chính xác</p>
+                <label class="form-label" for="email">Email</label>
+              </div>
+
+              <div class="form-outline mb-4">
+                <input type="text" id="address" class="form-control" formControlName="address" />
+                <p *ngIf="customerFormCreate.controls.address?.touched && customerFormCreate.controls.address?.errors?.required" class="text-danger">Bắt buộc
+                  nhập</p>
+                <label class="form-label" for="address">Địa chỉ</label>
+              </div>
+
+              <div class=" mb-4">
+                <label for="custommerType" class="form-label me-3">Loại khách hàng:</label>
+                <select class="select" id="custommerType" formControlName="customerType">
+                  <option value="">Chọn loại khách hàng</option>
+                  <option *ngFor="let item of customerTypeList" [ngValue]="item">{{item.name}}</option>
+                </select>
+                <p *ngIf="customerFormCreate.controls.customerType?.untouched || customerFormCreate.controls.customerType?.errors?.required" class="text-danger">Bắt buộc
+                  chọn</p>
+              </div>
+
+              <button type="submit" class="btn btn-success btn-lg mb-1" [disabled]="!customerFormCreate.valid">Submit</button>
+            </form>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

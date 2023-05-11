@@ -1,0 +1,29 @@
+<form [formGroup]="rfTeacher" *ngIf="rfTeacher">
+  <div class="input-group">
+    <label for="name">Name</label>
+    <input #name type="text" class="form-control" id="name" formControlName="name">
+  </div>
+  <p class="text-danger" *ngIf="rfTeacher.controls.name?.touched && rfTeacher.controls.name?.errors?.required">Bắt buộc nhập</p>
+  <p class="text-danger" *ngIf="rfTeacher.controls.name?.touched && rfTeacher.controls.name?.errors?.minlength">Tên phải lớn hơn hoặc bằng 5 ký tự</p>
+  <p class="text-danger" *ngIf="rfTeacher.controls.name?.touched && rfTeacher.controls.name?.errors?.pattern">Tên không được chứa số</p>
+
+  <div class="input-group">
+    <label for="salary">Salary</label>
+    <input #salary type="text" class="form-control" id="salary" formControlName="salary">
+  </div>
+  <!--  <p class="text-danger" *ngIf="name.value == salary.value">Lương và tên giống nhau</p>-->
+  <!--  <p class="text-danger" *ngIf="rfTeacher.controls.salary?.touched && rfTeacher.controls.salary?.errors?.ngheo">Bạn quá nghèo</p>-->
+  <!--  <p class="text-danger" *ngIf="rfTeacher.controls.salary?.touched && rfTeacher.controls.salary?.errors?.giau">Bạn quá giàu</p>-->
+  <p class="text-danger" *ngIf="rfTeacher.controls.salary?.touched && rfTeacher.controls.salary?.errors?.required">Bắt buộc nhập touched</p>
+  <p class="text-danger" *ngIf="rfTeacher.controls.salary?.untouched && rfTeacher.controls.salary?.errors?.required">Bắt buộc nhập untouched</p>
+  <p class="text-danger" *ngIf="rfTeacher.controls.salary?.dirty && rfTeacher.controls.salary?.errors?.required">Bắt buộc nhập dirty</p>
+  <p class="text-danger" *ngIf="rfTeacher.controls.salary?.pristine && rfTeacher.controls.salary?.errors?.required">Bắt buộc nhập pristine</p>
+
+  <div class="input-group">
+    <label for=""></label>
+    <select class="form-select" name="" id="" formControlName="teacherType">
+      <option *ngFor="let teacherType of teacherTypeList" [ngValue]="teacherType">{{teacherType.name}}</option>
+    </select>
+  </div>
+  <button [disabled]="rfTeacher.invalid" type="button" class="btn btn-primary" (click)="addTeacher(name.value, salary.value)">Create</button>
+</form>

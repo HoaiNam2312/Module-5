@@ -1,0 +1,152 @@
+<section class="h-100 h-custom my-2 bg-transparent">
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-lg-8 col-xl-6">
+        <div class="card rounded-3">
+<!--          <img src="https://www.pixelstalk.net/wp-content/uploads/2016/06/HD-Manchester-United-High-Def-Pictures.jpg"-->
+<!--               class="w-100" style="border-top-left-radius: .3rem; border-top-right-radius: .3rem;"-->
+<!--               alt="Sample photo">-->
+          <div class="card-body p-4 p-md-5">
+            <h3 class="mb-4 pb-2 pb-md-0 mb-md-5 px-md-2">Nội dung tin</h3>
+
+            <form class="px-md-2" [formGroup]="creatForm" (ngSubmit)="submit()" *ngIf="creatForm">
+
+              <div class="form-outline mb-4" hidden>
+                <input type="text" id="id" class="form-control" formControlName="id"/>
+                <label class="form-label" for="id">ID</label>
+              </div>
+
+              <div class=" mb-4">
+                <label for="danhMuc" class="form-label me-3">Danh mục: </label>
+                <select id="danhMuc" class="select" formControlName="danhMuc">
+                  <option value="Nhà Đất">Nhà Đất</option>
+                  <option value="Căn hộ">Căn hộ</option>
+                </select>
+              </div>
+
+              <div class=" mb-4">
+                <label for="vungMien" class="form-label me-3">Vùng miền: </label>
+                <select id="vungMien" class="select" formControlName="vungMien">
+                  <option value="Hà Nội">Hà Nội</option>
+                  <option value="Đà Nẵng">Đà Nẵng</option>
+                  <option value="Hồ Chí Minh">Hồ Chí Minh</option>
+                  <option value="Hải Phòng">Hải Phòng</option>
+                  <option value="Nha Trang">Nha Trang</option>
+                </select>
+              </div>
+
+              <div class=" mb-4">
+                <label class="form-label me-3">Bạn là:</label>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio"  id="inlineRadio1" value="Cá nhân" formControlName="banLa" checked>
+                  <label class="form-check-label" for="inlineRadio1">Cá Nhân</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio"  id="inlineRadio2" value="Công ty" formControlName="banLa">
+                  <label class="form-check-label" for="inlineRadio2">Công ty</label>
+                </div>
+              </div>
+
+              <div class=" mb-4">
+                <label class="form-label me-3">Bạn đăng tin:</label>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio"  id="inlineRadio3" value="Cần bán" formControlName="banDangTin" checked>
+                  <label class="form-check-label" for="inlineRadio1">Cần bán</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio"  id="inlineRadio4" value="Cần mua" formControlName="banDangTin">
+                  <label class="form-check-label" for="inlineRadio2">Cần mua</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio"  id="inlineRadio5" value="Cho thuê" formControlName="banDangTin">
+                  <label class="form-check-label" for="inlineRadio1">Cho thuê</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio"  id="inlineRadio6" value="Cần thuê" formControlName="banDangTin">
+                  <label class="form-check-label" for="inlineRadio2">Cần thuê</label>
+                </div>
+              </div>
+
+              <div class=" mb-4">
+                <label class="form-label me-3">Tình trạng:</label>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio"  id="inlineRadio7" value="Mới" formControlName="tinhTrang" checked>
+                  <label class="form-check-label" for="inlineRadio1">Mới</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio"  id="inlineRadio8" value="Đã sử dụng" formControlName="tinhTrang">
+                  <label class="form-check-label" for="inlineRadio2">Đã sử dụng</label>
+                </div>
+              </div>
+
+<!--              <div class="form-outline mb-4">-->
+<!--                <input type="text" id="diaChi" class="form-control" formControlName="diaChi"/>-->
+<!--                <label class="form-label" for="diaChi">Địa chỉ</label>-->
+<!--                <p *ngIf="creatForm.controls.diaChi?.touched && creatForm.controls.diaChi?.errors?.required" class="text-danger">Bắt buộc-->
+<!--                  nhập</p>-->
+<!--              </div>-->
+
+              <div class="form-outline mb-4">
+                <input type="text" id="diaChi" class="form-control" formControlName="diaChi"/>
+                <p *ngIf="creatForm.controls.diaChi?.touched && creatForm.controls.diaChi?.errors?.required"
+                   class="text-danger">Bắt buộc
+                  nhập</p>
+                <label class="form-label" for="diaChi">Địa chỉ</label>
+              </div>
+
+              <div class="form-outline mb-4">
+                <input type="number" id="dienTich" class="form-control" formControlName="dienTich"/>
+                <p *ngIf="creatForm.controls.dienTich?.touched && creatForm.controls.dienTich?.errors?.required"
+                   class="text-danger">Bắt buộc nhập</p>
+                <p *ngIf="creatForm.controls.dienTich?.touched && creatForm.controls.dienTich?.errors?.min"
+                   class="text-danger">Diện tích phải lớn hơn 20m2</p>
+                <label class="form-label" for="dienTich">Diện tích</label>
+              </div>
+
+              <div class=" mb-4">
+                <label for="huong" class="form-label me-3">Hướng: </label>
+                <select class="select" id="huong" formControlName="huong">
+                  <option *ngFor="let item of danhSachHuong" [ngValue]="item">{{item.name}}</option>
+                </select>
+                <p
+                  *ngIf="creatForm.controls.huong?.untouched || creatForm.controls.huong?.errors?.required"
+                  class="text-danger">Bắt buộc
+                  chọn</p>
+              </div>
+
+              <div class="form-outline mb-4">
+                <input type="text" id="tuaDe" class="form-control" formControlName="tuaDe"/>
+                <p *ngIf="creatForm.controls.tuaDe?.touched && creatForm.controls.tuaDe?.errors?.required"
+                   class="text-danger">Bắt buộc
+                  nhập</p>
+                <label class="form-label" for="tuaDe">Tựa đề</label>
+              </div>
+
+              <div class="form-outline mb-4">
+                <input type="text" id="noiDung" class="form-control" formControlName="noiDung"/>
+                <p *ngIf="creatForm.controls.noiDung?.touched && creatForm.controls.noiDung?.errors?.required"
+                   class="text-danger">Bắt buộc
+                  nhập</p>
+                <label class="form-label" for="noiDung">Nội dung</label>
+              </div>
+
+              <div class="form-outline mb-4">
+                <input type="number" id="gia" class="form-control" formControlName="gia"/>
+                <p *ngIf="creatForm.controls.gia?.touched && creatForm.controls.gia?.errors?.required"
+                   class="text-danger">Bắt buộc
+                  nhập</p>
+                <p *ngIf="creatForm.controls.gia?.touched && creatForm.controls.gia?.errors?.min"
+                   class="text-danger">Giá phải lớn hơn 100.000.000 VNĐ</p>
+                <label class="form-label" for="gia">Giá</label>
+              </div>
+
+
+              <button type="submit" class="btn btn-success btn-lg mb-1" [disabled]="!creatForm.valid">Tạo mới</button>
+            </form>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

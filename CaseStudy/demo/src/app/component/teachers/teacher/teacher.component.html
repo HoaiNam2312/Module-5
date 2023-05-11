@@ -1,0 +1,51 @@
+<div class="input-group">
+  <label for="name">Name</label>
+  <input #name type="text" id="name" class="form-control">
+
+  <div class="input-group">
+    <label for=""></label>
+    <select class="form-select" name="" id="" #teacherType>
+      <option *ngFor="let teacherType of teacherTypeList" value="{{teacherType.id}}">{{teacherType.name}}</option>
+    </select>
+  </div>
+</div>
+
+<button type="button" class="btn btn-primary" (click)="search(name.value, teacherType.value)">Create</button>
+
+<table class="table">
+  <thead>
+  <tr>
+    <th>No.</th>
+    <th>Name</th>
+    <th>Salary</th>
+    <th>Xếp loại</th>
+    <th>Lượt yêu thích</th>
+    <th>Detail</th>
+    <th>Edit</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let teacher of teacherList; index as i">
+    <td scope="row">{{i + 1}}</td>
+    <td>{{teacher.name}}</td>
+    <td>{{teacher.salary}}</td>
+    <td>
+      <ng-container *ngIf="teacher.salary < 5000000">
+        Nghèo
+      </ng-container>
+      <ng-container *ngIf="teacher.salary >= 5000000 && teacher.salary < 10000000">
+        Bình thường
+      </ng-container>
+      <ng-container *ngIf="teacher.salary >= 10000000">
+        Giàu
+      </ng-container>
+    </td>
+    <td>
+      <app-child [vote]="teacher.vote"></app-child>
+    </td>
+    <td><a class="btn btn-primary" routerLink="/teacher/detail/{{teacher.id}}">Detail</a></td>
+    <td><a class="btn btn-primary" routerLink="/teacher/edit/{{teacher.id}}">Edit</a></td>
+    <!--    <td><a [routerLink]="['/teacher/detail/',teacher.id]">Detail</a></td>-->
+  </tr>
+  </tbody>
+</table>

@@ -1,0 +1,27 @@
+<p>student works!</p>
+<p>Chào bạn: {{name}}</p>
+<a [href]="link" target="_blank">facebook</a>
+
+
+<div class="input-group">
+  <label for="first-number">First Number</label>
+  <input #firstNumber
+    type="number"
+    class="form-control" name="" id="first-number">
+</div>
+
+
+<div class="input-group">
+  <label for="second-number">Second Number</label>
+  <input #secondNumber
+    type="number"
+    class="form-control" name="" id="second-number">
+</div>
+
+<button type="button" (click)="sum(firstNumber.value, secondNumber.value)"
+        class="btn btn-primary">Tính tổng</button>
+
+<p>Kết quả: {{result}}</p>
+
+<input type="color" [(ngModel)]="color">
+<p [style.color]="color">Lorem ipsum.</p>

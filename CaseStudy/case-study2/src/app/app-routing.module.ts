@@ -1,8 +1,11 @@
 import {NgModule} from '@angular/core';
 import {Routes, RouterModule} from '@angular/router';
-import {HomeComponent} from './template/home/home.component';
-import {Home2Component} from './template/home2/home2.component';
-// import {HeaderComponent} from './template/header/header.component';
+import {HomeComponent} from './layout/home/home.component';
+import {Home2Component} from './layout/home2/home2.component';
+import {CustomerListComponent} from './customer/customer-list/customer-list.component';
+import {CustomerCreateComponent} from './customer/customer-create/customer-create.component';
+import {CustomerEditComponent} from './customer/customer-edit/customer-edit.component';
+// import {HeaderComponent} from './layout/header/header.component';
 
 
 const routes: Routes = [
@@ -13,7 +16,13 @@ const routes: Routes = [
     path: '', component: HomeComponent
   },
   {
-    path: 'home2', component: Home2Component
+    path: 'customer/list', component: CustomerListComponent
+  },
+  {
+    path: 'customer/create', component: CustomerCreateComponent
+  },
+  {
+    path: 'customer/edit/:id', component: CustomerEditComponent
   }
 ];
 
